@@ -2,11 +2,232 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Md Ridwan Islam's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Ridwan Islam | Professional Portfolio</title>
+    <style>
+        /* --- Basic Styles --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 25px;
+            background-color: #fff;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+        h1, h2, h3 {
+            color: #1a5276; /* A professional blue color */
+        }
+        h2 {
+            border-bottom: 2px solid #aed6f1;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Header / Homepage Section --- */
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%; /* Makes the photo circular */
+            object-fit: cover;
+            border: 4px solid #aed6f1;
+        }
+        .header h1 {
+            margin: 10px 0 5px 0;
+        }
+        .key-links {
+            margin-top: 15px;
+        }
+        .key-links a {
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        /* --- General Section Styling --- */
+        .section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+        .section li {
+            margin-bottom: 8px;
+        }
+        
+        /* --- Photo Gallery --- */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 15px;
+        }
+        .photo-gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
 </head>
 <body>
-    <h1>Md Ridwan Islam</h1>
-    <h2>Assistant Scientist, icddr,b</h2>
-    <p>Welcome to my professional portfolio. More details about my research and publications will be added soon.</p>
+
+    <div class="container">
+        
+        <!-- ======================= -->
+        <!-- Homepage Section -->
+        <!-- ======================= -->
+        <header class="header section">
+            <!-- আপনার ছবি যোগ করুন। ছবিটি repository-তে আপলোড করে এখানে তার নাম লিখুন -->
+            <img src="profile-photo.jpg" alt="Professional Photo of Md Ridwan Islam">
+            
+            <h1>Md Ridwan Islam</h1>
+            <p>Assistant Scientist at icddr,b | Public Health Researcher</p>
+            
+            <!-- Introduction -->
+            <p>
+                <strong>Introduction:</strong> A dedicated public health researcher with a focus on infectious diseases, malnutrition, and diarrhoeal diseases. Passionate about leveraging data to improve health outcomes in low-resource settings.
+            </p>
+            
+            <!-- Key Links -->
+            <div class="key-links">
+                <a href="YOUR_GOOGLE_SCHOLAR_LINK" target="_blank">Google Scholar</a>
+                <a href="YOUR_LINKEDIN_LINK" target="_blank">LinkedIn</a>
+                <a href="YOUR_RESEARCHGATE_LINK" target="_blank">ResearchGate</a>
+            </div>
+        </header>
+
+        
+        <!-- ======================= -->
+        <!-- About Me Section -->
+        <!-- ======================= -->
+        <section id="about" class="section">
+            <h2>About Me</h2>
+            
+            <h3>Research Interests</h3>
+            <ul>
+                <li>Public Health & Epidemiology</li>
+                <li>Infectious Diseases & Diarrhoeal Diseases</li>
+                <li>Severe Acute Malnutrition</li>
+                <li>Clinical Trials</li>
+            </ul>
+
+            <h3>Work Experience</h3>
+            <p><strong>Assistant Scientist</strong> | icddr,b | Jan 2024 - Present</p>
+            <p><strong>Research Investigator</strong> | icddr,b | May 2022 - Dec 2023</p>
+            <!-- Add other experiences here -->
+
+            <h3>Research Skills</h3>
+            <ul>
+                <li>Data Analysis (Stata, R)</li>
+                <li>Clinical Trial Management</li>
+                <li>Scientific Writing & Grant Proposal</li>
+                <li>Epidemiological Study Design</li>
+            </ul>
+
+            <h3>Language Skills</h3>
+            <ul>
+                <li>Bangla (Native)</li>
+                <li>English (Fluent)</li>
+            </ul>
+            
+            <h3>Other Skills</h3>
+            <ul>
+                <li>Public Speaking</li>
+                <li>Project Management</li>
+            </ul>
+
+            <h3>Education</h3>
+            <p><strong>Master of Public Health (MPH), Epidemiology</strong> | North South University (2019-2021)</p>
+            <p><strong>Bachelor of Medicine, Bachelor of Surgery (MBBS)</strong> | Holy Family Red Crescent Medical College (2008-2013)</p>
+            
+            <h3>Professional Memberships</h3>
+            <ul>
+                <li>Member, Bangladesh Medical and Dental Council (BMDC)</li>
+                <!-- Add other memberships here -->
+            </ul>
+        </section>
+
+        
+        <!-- ======================= -->
+        <!-- Publications Section -->
+        <!-- ======================= -->
+        <section id="publications" class="section">
+            <h2>Publications</h2>
+            <p>A selection of my key publications. For a full list, please visit my <a href="YOUR_GOOGLE_SCHOLAR_LINK" target="_blank">Google Scholar</a> profile.</p>
+            
+            <!-- List of Publications -->
+            <ol>
+                <li>
+                    <strong>Title of Publication 1.</strong><br>
+                    <em>Journal Name, Year, Volume(Issue), Pages.</em> <a href="LINK_TO_PAPER_1" target="_blank">[Link]</a>
+                </li>
+                <li>
+                    <strong>Title of Publication 2.</strong><br>
+                    <em>Journal Name, Year, Volume(Issue), Pages.</em> <a href="LINK_TO_PAPER_2" target="_blank">[Link]</a>
+                </li>
+                 <!-- Add more publications here -->
+            </ol>
+
+            <h3>Peer Review</h3>
+            <p>Served as a peer reviewer for several international journals, including [Journal Name 1], [Journal Name 2], etc.</p>
+        </section>
+
+
+        <!-- ======================= -->
+        <!-- Impact and Recognition Section -->
+        <!-- ======================= -->
+        <section id="impact" class="section">
+            <h2>Impact and Recognition</h2>
+            
+            <h3>Media Coverage</h3>
+            <ul>
+                <li>
+                    <strong>"Title of News Article or Feature"</strong> - <em>Publication Name, Date</em>. <a href="LINK_TO_MEDIA_COVERAGE" target="_blank">[Read More]</a>
+                </li>
+                 <!-- Add more media coverage here -->
+            </ul>
+
+            <h3>Photo Gallery</h3>
+            <p>Moments from conferences, fieldwork, and professional events.</p>
+            <div class="photo-gallery">
+                <!-- আপলোড করা ছবির নাম এখানে দিন -->
+                <img src="gallery-image-1.jpg" alt="Description of image 1">
+                <img src="gallery-image-2.jpg" alt="Description of image 2">
+                <img src="gallery-image-3.jpg" alt="Description of image 3">
+            </div>
+        </section>
+
+
+        <!-- ======================= -->
+        <!-- Contact Section -->
+        <!-- ======================= -->
+        <section id="contact" class="section">
+            <h2>Contact</h2>
+            <p>I am open to collaborations and new opportunities. Feel free to get in touch.</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+                <li><strong>LinkedIn:</strong> <a href="YOUR_LINKEDIN_LINK" target="_blank">linkedin.com/in/your-profile</a></li>
+                <!-- Add other social media links here -->
+            </ul>
+        </section>
+
+    </div>
+
 </body>
 </html>
