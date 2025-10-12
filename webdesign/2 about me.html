@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Md Ridwan Islam</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1A5276;
+            --secondary-color: #34495E;
+            --background-color: #F8F9FA;
+            --accent-color: #48C9B0;
+            --border-color: #D5DBDB;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lora', serif;
+            color: var(--secondary-color);
+            background-color: var(--background-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Inter', sans-serif;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.25rem);
+            font-weight: 600;
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .nav-logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-logo i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary-color);
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-links a.active {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        /* Page Header */
+        .page-header {
+            padding: 3rem 0 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 2rem 0 4rem;
+        }
+        
+        .content-container {
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+            gap: 3rem;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            margin-left: 2rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            height: 18px;
+            width: 18px;
+            border-radius: 50%;
+            background-color: var(--accent-color);
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px var(--border-color);
+        }
+        
+        .timeline-title {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 1.125rem;
+            color: var(--primary-color);
+        }
+        
+        .timeline-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: var(--secondary-color);
+        }
+        
+        .timeline-date {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-top: 0.25rem;
+            display: inline-block;
+            padding: 0.125rem 0.75rem;
+            background-color: rgba(72, 201, 176, 0.1);
+            border-radius: 20px;
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--border-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        /* List Styles */
+        .list {
+            list-style-type: none;
+        }
+        
+        .list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+            font-size: 1.25rem;
+        }
+        
+        .sub-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .sub-section-title {
+            font-size: 1.125rem;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+        }
+        
+        .sub-section-title i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        /* Card Styles */
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Tag Styles */
+        .tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: rgba(72, 201, 176, 0.1);
+            color: var(--accent-color);
+            border-radius: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.875rem;
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .content-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-microscope"></i>
+                <span>Md Ridwan Islam</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">About Me</a></li>
+                <li><a href="#">Featured Projects</a></li>
+                <li><a href="#">Publications</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>About Me</h1>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="container">
+            <div class="content-container">
+                <!-- Left Column -->
+                <div class="left-column">
+                    <!-- Work Experience Section -->
+                    <div class="section">
+                        <h2 class="section-title">Work Experience</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-title">Assistant Scientist</div>
+                                <div class="timeline-subtitle">Nutrition Research Division, icddr,b</div>
+                                <div class="timeline-date">2024 – Present</div>
+                                <p>Leading research on severe acute malnutrition, diarrheal diseases, and gut microbiota in children. Managing clinical trials and supervising research assistants in the implementation of nutrition interventions.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">Research Investigator</div>
+                                <div class="timeline-subtitle">Nutrition Research Division, icddr,b</div>
+                                <div class="timeline-date">2022 – 2024</div>
+                                <p>Conducted research on probiotic and prebiotic interventions for malnourished infants. Served as Co-Investigator for the Gates Medical Research Institute funded CONSTELLATION Study.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">Study Physician</div>
+                                <div class="timeline-subtitle">Nutrition and Clinical Services Division, icddr,b</div>
+                                <div class="timeline-date">2019 – 2022</div>
+                                <p>Provided clinical care to patients with diarrheal diseases and malnutrition. Actively involved in research and published multiple papers in international peer-reviewed journals.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">Project Research Physician</div>
+                                <div class="timeline-subtitle">Nutrition and Clinical Services Division, icddr,b</div>
+                                <div class="timeline-date">2018 – 2019</div>
+                                <p>Worked in the SYNERGIE trial investigating the role of probiotic and prebiotic intervention in nutritional recovery among young infants.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">Clinical Fellow</div>
+                                <div class="timeline-subtitle">Dhaka Hospital, icddr,b</div>
+                                <div class="timeline-date">2016 – 2018</div>
+                                <p>Gained clinical experience in the management of children suffering from malnutrition, diarrheal diseases, and infectious illnesses.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">Honorary Medical Officer</div>
+                                <div class="timeline-subtitle">Dhaka Medical College Hospital, Dhaka</div>
+                                <div class="timeline-date">2015</div>
+                                <p>Provided medical care in one of Bangladesh's premier medical institutions.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Education Section -->
+                    <div class="section">
+                        <h2 class="section-title">Education</h2>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-title">Master of Public Health</div>
+                                <div class="timeline-subtitle">North South University, Dhaka, Bangladesh</div>
+                                <div class="timeline-date">Aug 2021</div>
+                                <p>Specialization in Epidemiology</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-title">Bachelor of Medicine & Bachelor of Surgery</div>
+                                <div class="timeline-subtitle">Holy Family Red Crescent Medical College, University of Dhaka, Bangladesh</div>
+                                <div class="timeline-date">May 2013</div>
+                                <p>Medical degree with comprehensive clinical training</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="right-column">
+                    <!-- Research Interests -->
+                    <div class="card">
+                        <h3 class="section-title">Research Interests</h3>
+                        <div class="flex flex-wrap">
+                            <span class="tag">Malnutrition</span>
+                            <span class="tag">Diarrheal Diseases</span>
+                            <span class="tag">Probiotic & Prebiotic Intervention</span>
+                            <span class="tag">Gut Microbiota</span>
+                            <span class="tag">Child Health</span>
+                            <span class="tag">Nutritional Recovery</span>
+                            <span class="tag">Clinical Trials</span>
+                            <span class="tag">Epidemiology</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Skills Section -->
+                    <div class="card">
+                        <h3 class="section-title">Skills</h3>
+                        
+                        <div class="sub-section">
+                            <h4 class="sub-section-title">
+                                <i class="fas fa-microscope"></i>
+                                Research Skills
+                            </h4>
+                            <ul class="list">
+                                <li>Clinical Trial Design & Implementation</li>
+                                <li>Epidemiological Research Methods</li>
+                                <li>Data Collection & Management</li>
+                                <li>Statistical Analysis</li>
+                                <li>Scientific Writing & Publication</li>
+                                <li>Qualitative Research</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sub-section">
+                            <h4 class="sub-section-title">
+                                <i class="fas fa-laptop-code"></i>
+                                Technical Skills
+                            </h4>
+                            <ul class="list">
+                                <li>Statistical Software (SPSS, STATA, R)</li>
+                                <li>Research Protocol Development</li>
+                                <li>Systematic Review & Meta-analysis</li>
+                                <li>Literature Search & Management</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="sub-section">
+                            <h4 class="sub-section-title">
+                                <i class="fas fa-language"></i>
+                                Language Skills
+                            </h4>
+                            <ul class="list">
+                                <li>Bengali (Native)</li>
+                                <li>English (Fluent)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>© 2025 Md Ridwan Islam. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
