@@ -38,15 +38,12 @@
 * [ ] **Email**
 * [ ] **Social Media**
 
-
-
-
 ### Impovement option
 
 * [X] my current project is Tebipenem Trail . add it in featured project first.  here my Current Role is FPI: https://www.openlabfoundation.org/research_project_detail.php?project=81
 * [X] Remove Professional Memberships and Download Full CV Section Section
 * [X] Every Featured project contains these information. Study details, My Role,  And Associated Publication.
 * [X] Impact & Recognization page I want to drop.
-* [ ] In contact there is no need to provide send massage . I provide email. linked in for contact
-* [ ] I want to add all publication here also following serial that i provided you.
-* [ ] Add ORS Details and featured project
+* [X] In contact there is no need to provide send massage . I provide email. linked in for contact
+* [X] I want to add all publication here also following serial that i provided you.
+* [X] Add ORS Details and featured project
